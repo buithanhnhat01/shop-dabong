@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	tmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{site/dashboardLayout.html}">
+
+<head>
+<!-- <link th:href="@{/css/style.css}" rel="stylesheet"> -->
+
+</head>
+<body>
+<body>
+    <section  layout:fragment="content">
+        <div class="headline" >
+        <h3 style="text-align: center;">About Us</h3>
+    </div>
+        <style>
+            .headline {
+					text-align: center;
+					margin: 40px 410px;
+				}
+
+				h3 {
+					font-size: 18px;
+					color: #111;
+					padding: 10px 20px;
+					text-transform: uppercase;
+					border: 1px solid #bebebe;
+					display: inline-block;
+					color: #555;
+					font-weight: 600;
+				}
+        </style>
+		<div class="row">
+			<!-- <style>
+				.fakeimg {
+				  height: 200px;
+				  background: #aaa;
+				}
+				</style> -->
+			<div class="container mt-5">
+				<div class="row">
+				  <div class="col-sm-4" style="text-align: center;">
+					<h2>About Me</h2>
+					<h5>Chân dung của tôi:</h5>
+					<div class="fakeimg">
+						<img th:src="@{/images/nhat.jpg}" width="55%">
+						<table></table>
+					<h5>Bùi Thanh Nhật</h5>
+					</div>
+					<p>Admin đang học và làm việc tại cao đẳng FPT.</p>
+					
+					<hr class="d-sm-none">
+				  </div>
+				  <div class="col-sm-8" style="text-align: center;">
+					<h2>CHỨNG NHẬN</h2>
+					<h5>Title description, Dec 7, 2020</h5>
+					<div class="fakeimg">
+						<img th:src="@{/images/btn.png}" width="100%">
+						 </div>
+					<p>Some text..</p>
+					<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			  
+						 
+				  </div>
+				</div>
+			  </div>
+		</div>
+        
+
+          
+</section>
+</body>
+
+</html>

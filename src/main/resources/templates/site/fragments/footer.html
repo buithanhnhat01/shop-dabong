@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+  </head>
+<body>
+    <div th:fragment="footer">
+      <footer id="12345" class="footer">
+        <style>
+            .footer {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                color: #99979c;
+                background-color: #2a2730;
+                margin-top: 30px;
+            }
+
+            .footer a {
+                color: white;
+            }
+
+            .footer a:focus,
+            .footer a:hover {
+                color: orange !important;
+                text-decoration: none !important;
+            }
+
+            .footer p {
+                margin-bottom: 0rem !important;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="index.html">
+                                <img  src= "https://theme.hstatic.net/1000341630/1000790868/14/logo.png?v=173 " width="60">
+                            </a>
+                        </li>
+                        <li class="list-inline-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="list-inline-item"><a href="about.html">Giới thiệu</a></li>
+                        <li class="list-inline-item"><a href="support/contact.html">Liên hệ</a></li>
+                    </ul>
+                    <p>Được thiết kế với nỗi nhớ vô hạn trong mùa <a href="https://www.who.int/" rel="noopener"
+                            target="_blank" title="COVID-19">COVID-19</a> bởi <a href="https://github.com/gitfirstteam"
+                            rel="noopener" target="_blank" title="Thanh Nhât">Thanh Nhật</a>.</p>
+                    <p>Copyright © 2020 FRONT-END. All rights reserved.</p>
+                </div>
+                <div class="col-12 col-sm-auto mt-2">
+                    <a href="https://github.com/gitfirstteam" rel="noopener" target="_blank" title="Github"
+                        style="margin-right: 15px;text-decoration: none !important;">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC4Gp7xLOt0MxnCzJB-qzCwg" rel="noopener" target="_blank"
+                        title="Youtube">
+                        <i class="fab fa-youtube fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+    
+    </div>
+</body>
+</html>

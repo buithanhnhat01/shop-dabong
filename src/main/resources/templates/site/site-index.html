@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" tmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{site/dashboardLayout.html}">
+
+<head>
+  <!-- <link th:href="@{/css/style.css}" rel="stylesheet"> -->
+
+</head>
+
+<body>
+  <!-- <section class="row" layout:fragment="content"> -->
+
+  <section id="Slide" layout:fragment="content">
+
+    <div class="aspect-ratio-169">
+      <img th:src="@{/images/1.png}">
+      <img th:src="@{/images/2.jpg}">
+      <img th:src="@{/images/3.jpg}">
+    </div>
+    <div class="dot-container">
+      <div class="dot active" active></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <script type="text/javascript">
+      /* Chuyển trang */
+      const /* biến hằng */ imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+      const imgContainer = document.querySelector('.aspect-ratio-169')
+      const dotItem = document.querySelectorAll(".dot")
+      let imgNuber = imgPosition.length
+      let index = 0
+      //console.log(imgPosition)
+      imgPosition.forEach(function (image, index) {
+        image.style.left = index * 100 + "%"
+        dotItem[index].addEventListener("click", function () {
+          Slide(index)
+        })
+      })
+      function imgSlide() {
+        index++;
+        console.log(index)
+        if (index >= imgNuber) { index = 0 }
+        Slide(index)
+      }
+      function Slide(index) {
+        imgContainer.style.left = "-" + index * 100 + "%"
+      }
+      setInterval(imgSlide, 5000)
+    </script>
+
+
+
+
+
+
+    <div class="container-fluid p-5  text-white text-center">
+      <h1 style="color: #000;">Sản Phẩm Sale</h1>
+      <p style="color: #000;">Sản phẩm được khách hàng săn đoán nhất và sale 50%!</p>
+    </div>
+
+    <style>
+      h3 {
+        text-align: center;
+      }
+    </style>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>   </h3>
+          <a th:href="@{/TrangChu/sale}"><img th:src="@{/images/7.jpg}" width="100%"> </a>
+        </div>
+        <div class="col-sm-4">
+          <h3> </h3>
+          <a th:href="@{/TrangChu/sale}"><img th:src="@{/images/8.jpg}" width="100%"></a>
+
+          
+        </div>
+        <div class="col-sm-4">
+          <h3></h3>
+          <a th:href="@{/TrangChu/sale}"> <img th:src="@{/images/9.jpg}" width="100%"></a>
+         
+        </div>
+      </div>
+    </div>
+
+<br>
+<br>
+
+
+<div class="headline" >
+  <h2 style="text-align: center;">Giày Hiệu</h2>
+</div>
+  <style>
+    .headline {
+        text-align: center;
+        margin: 40px 410px;
+      }
+
+      h2 {
+        font-size: 18px;
+        color: #111;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        border: 1px solid #bebebe;
+        display: inline-block;
+        color: #555;
+        font-weight: 600;
+      }
+  </style>
+  <br>
+  <div class="row" >
+    <style>
+      h3{
+        font-size: 17px;
+        font-family: 'Courier New', Courier, monospace;
+      }
+    </style>
+    <div class="col-4">
+    <div class="proloop-banner">
+      <a class="banner-hover" th:href="@{/TrangChu/giay}">
+        <img src="//theme.hstatic.net/1000341630/1000790868/14/collection_one_img.jpg?v=173" width="100%" alt=" SẢN PHẨM NỔI BẬT ">
+      </a>
+    </div>
+  </div>
+ <div class="col-2">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure>
+      <a th:href="@{/TrangChu/chitietsp}">
+        <img class="img-loop" alt="Trắng vàng" src="//product.hstatic.net/1000341630/product/giay_dabong_ta11_10_a8a37a8889004e13b1381274dabcd3ba_master.jpg" width="100%"></a>
+      </figure>
+    <div class="card-body">
+      <h3 class="card-title">Air forone!</h3>
+     
+      <div class="card-actions justify-end">
+        <!-- <button class="btn btn-info">Buy Now</button> -->
+      </div>
+    </div>
+  </div>
+ </div>
+ <div class="col-2">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure>
+      <a th:href="@{/TrangChu/giay}">
+        <img class="product-image-feature" src="//product.hstatic.net/1000341630/product/artboard_1_9a4743bec18e46af895971eebecb577f_master.jpg" alt=" GIÀY BÓNG ĐÁ SÂN CỎ NHÂN TẠO TA11" width="100%" ></a></figure>
+    <div class="card-body">
+      <h3 class="card-title">Conveter!</h3>
+     
+      <div class="card-actions justify-end">
+        <!-- <button class="btn btn-info">Buy Now</button> -->
+      </div>
+    </div>
+  </div>
+ </div>
+ <div class="col-2 ">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure>
+      <a th:href="@{/TrangChu/giay}">
+        <img class="product-image-feature" src="//product.hstatic.net/1000341630/product/artboard_3_f4376b008bae4945a2f6b13b70723c52_master.jpg" alt=" GIÀY BÓNG ĐÁ SÂN CỎ NHÂN TẠO TA11" width="100%"></a></figure>
+     
+    <div class="card-body">
+      <h3 class="card-title">Nike!</h3>
+     
+      <div class="card-actions justify-end">
+        <!-- <button class="btn btn-info">Buy Now</button> -->
+      </div>
+    </div>
+  </div>
+ </div>
+ <div class="col-2">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure>
+      <a th:href="@{/TrangChu/giay}">
+        <img class="img-loop" alt="Đỏ vàng" src="//product.hstatic.net/1000341630/product/artboard_1_a66917339cd54dea9f4ef05a99e0651c_large.jpg" width="100%"></a>
+      </figure>
+    <div class="card-body">
+      <h3 class="card-title">Air forone!</h3>
+     
+      <div class="card-actions justify-end">
+        <!-- <button class="btn btn-info">Buy Now</button> -->
+      </div>
+    </div>
+  </div>
+ </div>
+ 
+  </div>
+  
+  
+  </section>
+
+
+  <!-- </section> -->
+
+</body>
+
+</html>

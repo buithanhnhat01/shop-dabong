@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+     
+    <header>
+        <div class="logo">
+        <img src="/images/logo.png" width="120px" height="50px" alt="">
+        </div>
+        <div class="menu"> 
+               <li><a href="#" >Nữ</a>
+                 <ul class="sub-menu">
+                    
+                    <li><a href="#" >Manage Customer</a>
+                        
+                    </li>
+                    <li><a href="#" >Manage Category</a>
+                        
+                    </li>
+                    <li><a href="#" >Manage Product</a>
+                        
+                    </li>
+                    <li><a href="#" >Manage Order</a>
+                        
+                    </li>
+                    <li><a href="#" >Manage Profile</a>
+                        
+                    </li>
+                   </ul>
+               </li>
+               <li><a href="#" >Nam</a></li>
+               <li><a href="#" >Trẻ em</a></li>
+               <li><a href="#" >Sale</a></li>
+               <li><a href="#" >Khẩu trang- Bộ bảo hộ</a></li>
+               <li><a href="#" >Bộ sưu tập</a></li>
+               <li><a href="#" >Thông tin   </a></li>
+               
+        </div>
+        <div class="others">
+         <li><input placeholder="Tiềm kiếm" type="text"><i class="fas fa-search"></i></li>
+         <li><i class="fas fa-paw"></i></li>
+         <li><i class="fas fa-user"></i></li>
+        </div>
+    </header>
+    <section class="row" id="Slider">
+         <div class="aspect-ratio-169">
+             <img src="images/1.jpg">
+             <img src="images/2.jpg">
+             <img src="images/3.jpg">
+             <img src="images/4.jpg">
+             <img src="images/5.jpg">
+             <img src="images/6.jpg">
+         </div>
+         <div class="dot-container">
+            <div class="dot active" active></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            
+         </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+<script>
+        const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+        const imgContainer = document.querySelector('.aspect-ratio-169')
+        const dotItem = document.querySelectorAll(".dot")
+        let imgNuber = imgPosition.length
+        let index = 0
+        //console.log(imgPosition)
+        imgPosition.forEach(function(image,index){
+            image.style.left = index*100 + "%"
+            dotItem[index].addEventListener("click",function(){
+                Slider(index)
+            })
+        })
+        function imgSlide(){
+            index++;
+            console.log(index)
+            if(index>=imgNuber){index=0}
+            Slider(index)
+        }
+        function Slider(index){
+            imgContainer.style.left = "-" +index*100+"%"
+        }
+        setInterval(imgSlide,5000)
+
+
+
+</script>
+</html>

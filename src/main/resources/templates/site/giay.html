@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{site/dashboardLayout.html}">
+
+<head>
+
+
+</head>
+
+<body>
+  <section layout:fragment="content">
+    <div class=" banner-collection-header">
+				
+				<img src="https://file.hstatic.net/1000341630/collection/banner_web-02_19f8e056456746e298094152180da0e4.jpg" alt="Giày bóng đá">
+				
+			</div>
+    <div class="headline" >
+        <h2 style="text-align: center;">Hàng Hiệu</h2>
+      </div>
+        <style>
+          .headline {
+              text-align: center;
+              margin: 40px 410px;
+            }
+      
+            h2 {
+              font-size: 18px;
+              color: #111;
+              padding: 10px 20px;
+              text-transform: uppercase;
+              border: 1px solid #bebebe;
+              display: inline-block;
+              color: #555;
+              font-weight: 600;
+            }
+        </style>
+    <div class="container mt-5">
+      <select class="sort-by custom-dropdown__select">
+																				
+				<option value="manual">Sản phẩm hot</option>
+				
+				<option value="price-ascending" data-filter="&amp;sortby=(price:product=asc)">Giá: Tăng dần</option>
+				<option value="price-descending" data-filter="&amp;sortby=(price:product=desc)">Giá: Giảm dần</option>
+				<option value="title-ascending" data-filter="&amp;sortby=(title:product=asc)">Tên: A-Z</option>
+				<option value="title-descending" data-filter="&amp;sortby=(price:product=desc)">Tên: Z-A</option>
+				<option value="created-ascending" data-filter="&amp;sortby=(updated_at:product=desc)">Cũ nhất</option>
+				<option value="created-descending" data-filter="&amp;sortby=(updated_at:product=asc)">Mới nhất</option>
+				<option value="best-selling" data-filter="&amp;sortby=(sold_quantity:product=desc)">Bán chạy nhất</option>
+				<option value="quantity-descending">Tồn kho: Giảm dần</option>
+			</select>
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <a th:href="@{/TrangChu/chitietsp}">
+            <img th:src="@{/images/giay1.jpg}" width="100%">
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <img th:src="@{/images/giay2.jpg}" width="100%">
+          </div>
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <img th:src="@{/images/giay10.jpg}" width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>  </h3>
+           <img th:src="@{/images/giay4.jpg}" width="100%">
+            
+          </div>
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <img th:src="@{/images/giay5.jpg}" width="100%">
+          </div>
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <img th:src="@{/images/giay6.jpg}" width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <img th:src="@{/images/giay7.jpg}" width="100%">
+          </div>
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <img th:src="@{/images/giay8.jpg}" width="100%">
+          </div>
+          <div class="col-sm-4">
+            <h3>  </h3>
+            <img th:src="@{/images/giay9.jpg}" width="100%">
+          </div>
+        </div>  
+      </div>
+
+
+      
+  </section>
+  </body>
+</html>

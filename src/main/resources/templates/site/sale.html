@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{site/dashboardLayout.html}">
+
+<head>
+
+
+</head>
+
+<body>
+  <section layout:fragment="content">
+    <div class=" banner-collection-header">
+				
+      <img src="https://file.hstatic.net/1000341630/collection/banner3_9edf85ccbc1f46b396aea30300558926.png" alt="Sản Phẩm Sale">
+      
+    </div>
+
+    <div class="container-fluid p-5  text-white text-center">
+      <h1 style="color: #000;">Sản Phẩm Sale </h1>
+      <p style="color: #000;">Tất cả sản phẩm bên dưới được sale 40%!</p> 
+    </div>
+
+    <style>
+      h3 {
+        text-align: center;
+      }
+    </style>
+    
+    <div class="container mt-5">
+      <select class="sort-by custom-dropdown__select">
+																				
+				<option value="manual">Sản phẩm hot</option>
+				
+				<option value="price-ascending" data-filter="&amp;sortby=(price:product=asc)">Giá: Tăng dần</option>
+				<option value="price-descending" data-filter="&amp;sortby=(price:product=desc)">Giá: Giảm dần</option>
+				<option value="title-ascending" data-filter="&amp;sortby=(title:product=asc)">Tên: A-Z</option>
+				<option value="title-descending" data-filter="&amp;sortby=(price:product=desc)">Tên: Z-A</option>
+				<option value="created-ascending" data-filter="&amp;sortby=(updated_at:product=desc)">Cũ nhất</option>
+				<option value="created-descending" data-filter="&amp;sortby=(updated_at:product=asc)">Mới nhất</option>
+				<option value="best-selling" data-filter="&amp;sortby=(sold_quantity:product=desc)">Bán chạy nhất</option>
+				<option value="quantity-descending">Tồn kho: Giảm dần</option>
+			</select>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>   </h3>
+          <a th:href="@{/TrangChu/chitietsp1}">
+            <img th:src="@{/images/7.jpg}" width="100%">
+            </a>
+         
+        </div>
+        <div class="col-sm-4">
+          <h3> </h3>
+          <img th:src="@{/images/8.jpg}" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <h3></h3>
+          <img th:src="@{/images/9.jpg}" width="100%">
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>   </h3>
+          <img th:src="@{/images/ao1 (1).jpg}" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <h3> </h3>
+          <img th:src="@{/images/ao1 (2).jpg}" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <h3></h3>
+          <img th:src="@{/images/ao1 (3).jpg}" width="100%">
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>   </h3>
+          <img th:src="@{/images/ao1 (4).jpg}" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <h3> </h3>
+          <img th:src="@{/images/ao1 (5).jpg}" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <h3></h3>
+          <img th:src="@{/images/ao1 (6).jpg}" width="100%">
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    </section>
+  </body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{site/dashboardLayout.html}">
+
+<head>
+
+
+</head>
+
+<body>
+	<section layout:fragment="content">
+		<div class=" banner-collection-header">
+				
+			<img src="https://file.hstatic.net/1000341630/collection/tt_e866282514214e309a807a9df054bae0.jpg" alt="Quần áo bóng đá">
+			
+		</div>	
+
+		<div id="wrapper">
+			<div class="headline">
+				<h3>Product</h3>
+			</div>
+			<select class="sort-by custom-dropdown__select">
+																				
+				<option value="manual">Sản phẩm hot</option>
+				
+				<option value="price-ascending" data-filter="&amp;sortby=(price:product=asc)">Giá: Tăng dần</option>
+				<option value="price-descending" data-filter="&amp;sortby=(price:product=desc)">Giá: Giảm dần</option>
+				<option value="title-ascending" data-filter="&amp;sortby=(title:product=asc)">Tên: A-Z</option>
+				<option value="title-descending" data-filter="&amp;sortby=(price:product=desc)">Tên: Z-A</option>
+				<option value="created-ascending" data-filter="&amp;sortby=(updated_at:product=desc)">Cũ nhất</option>
+				<option value="created-descending" data-filter="&amp;sortby=(updated_at:product=asc)">Mới nhất</option>
+				<option value="best-selling" data-filter="&amp;sortby=(sold_quantity:product=desc)">Bán chạy nhất</option>
+				<option value="quantity-descending">Tồn kho: Giảm dần</option>
+			</select>
+			
+			<ul class="products">
+				<li th:each="item:${list}">
+					<div class="product-item">
+						<div class="product-top">
+							<div class="product-info">
+								<a href="" class="a product-cat">BAGS</a>
+								<h1 th:text="${item.name}" />
+								<a class="product-price"><span th:text="${item.unitPrice}" /><sup>đ</sup></a>
+							</div>
+							<a th:href="@{'/TrangChu/Shop/Cart?name='+${item.productId}}" class="product-thumb"> <img
+									th:src="${item.image!= null? '/admin/products/images/'+ item.image : 'images/logo.png'}"
+									alt="123">
+							</a>
+							<button>Mua Ngay</button>
+
+						</div>
+
+					</div>
+				</li>
+
+
+
+			</ul>
+			<style>
+				.cart {
+					width: 50%;
+					margin: auto;
+					text-align: center;
+					padding-top: 30px;
+				}
+
+				#CartShop:checked+.cart {
+					right: 0;
+				}
+
+				.cart h2 {
+					margin-bottom: 20px;
+				}
+
+				.cart table {
+					width: 100%;
+				}
+
+				.cart table thead tr th:first-child {
+					text-align: left;
+				}
+
+				.cart table tr td {
+					border-bottom: 1px solid #ddd;
+					padding: 12px 0px;
+				}
+
+				.cart table thead tr th:last-child {
+					text-align: right;
+				}
+
+				.cart table tbody tr td:last-child {
+					text-align: right;
+				}
+
+				.cart {
+					position: fixed;
+					height: 100vh;
+					width: 400px;
+					top: 0;
+					background-color: rgb(255, 255, 255);
+					padding: 12px 20px;
+					overflow-y: scroll;
+					right: -100%;
+					transition: .8s;
+					
+				}
+
+				.cart button {
+					margin-top: 12px;
+					height: 30px;
+					padding: 0 20px;
+					cursor: pointer;
+					border: none;
+					border-radius: 5px;
+					background-color: tomato;
+				}
+
+				@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+				* {
+					padding: 0;
+					margin: 0;
+				}
+
+				body {
+					font-family: 'Roboto', sans-serif;
+					font-size: 14px;
+					color: #111;
+					line-height: 1.15;
+				}
+
+				#wrapper {
+					max-width: 1170px;
+					margin: 0 auto;
+				}
+
+				.headline {
+					text-align: center;
+					margin: 40px 410px;
+				}
+
+				h3 {
+					font-size: 18px;
+					color: #111;
+					padding: 10px 20px;
+					text-transform: uppercase;
+					border: 1px solid #bebebe;
+					display: inline-block;
+					color: #555;
+					font-weight: 600;
+				}
+
+				ul.products {
+					list-style: none;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+				}
+
+				ul.products li {
+					flex-basis: 25%;
+					padding-left: 15px;
+					padding-right: 15px;
+					box-sizing: border-box;
+					margin-bottom: 30px;
+				}
+
+				ul.products li img {
+					max-width: 100%;
+					height: auto;
+				}
+
+				ul.products li .product-top {
+					position: relative;
+					overflow: hidden;
+				}
+
+				ul.products li .product-top .product-thumb {
+					display: block;
+				}
+
+				ul.products li .product-top .product-thumb img {
+					display: block;
+				}
+
+				ul.products li:hover .product-top .product-thumb img {
+					filter: opacity(80%);
+				}
+
+				ul.products li .product-top button {
+					text-transform: uppercase;
+					text-decoration: none;
+					text-align: center;
+					display: block;
+					background-color: #446084;
+					color: #fff;
+					padding: 10px 0px;
+					position: absolute;
+					bottom: -36px;
+					width: 100%;
+					transition: 0.35s ease-in-out;
+					opacity: 0.85;
+				}
+
+				ul.products li :hover button {
+					bottom: 0px;
+				}
+
+				ul.products li .product-info {
+					padding: 10px 0px;
+				}
+
+				ul.products li .product-info a {
+					display: block;
+					text-decoration: none;
+				}
+
+				ul.products li .product-info a.product-cat {
+					font-size: 11px;
+					text-transform: uppercase;
+					color: #9e9e9e;
+					padding: 3px 0px;
+				}
+
+				ul.products li .product-info h1 {
+					color: #334862;
+					padding: 3px 0px;
+					font-size: 18px;
+				}
+
+				ul.products li .product-info a.product-price {
+					color: #bbb;
+					padding: 2px 0px;
+					font-weight: 600;
+				}
+
+				.cart-icon i {
+					cursor: pointer;
+				}
+
+				.cart i {
+					cursor: pointer;
+					margin-bottom: 30px;
+					float: left;
+				}
+			</style>
+			<input type="checkbox" id="CartShop" hidden>
+			<section class="cart">
+				<label for="CartShop" style="position: absolute;left:10px;"><i class="fa fa-times"
+						aria-hidden="true"></i></label>
+				<h2>Cart</h2>
+				<form action="">
+					<table>
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th>Unit Price</th>
+								<th>Amount</th>
+								<th>Choose</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="item:${cart}">
+								<td style="display:flex ; align-items: center;">
+									<strong th:text="${item.product.name}"/></strong></td>
+								<td>
+									<p><span th:text="${item.product.unitPrice}"/>đ</p>
+								</td>
+								<td><input style="width: 30px; outline: none;" th:value="${item.quantity}" type="number" value="1" min="1">
+								</td>
+								<td style="cursor:pointer;"> <a th:href="@{'/TrangChu/Cart/Remove?id='+${item.orderDetailId}}">Delete</a></td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div style="text-align: right;" class="price-total">
+						<p style="font-weight: bold;">
+							Tong tien:<span th:utext="${total}"/><sup>đ</sup>
+						</p>
+					</div>
+					<button>Thanh Toán</button>
+				</form>
+
+
+
+			</section>
+
+		</div>
+
+	</section>
+</body>
+<script type="text/javascript">
+	const btn = document.querySelectorAll("button")
+	// console.log(btn)
+	btn.forEach(function (button, index) {
+		button.addEventListener("click", function (event) {
+			{
+				var btnItem = event.target
+				var product = btnItem.parentElement
+				var productImage = product.querySelector("img").src
+				var productName = product.querySelector("H1").innerText
+				var productPrice = product.querySelector("span").innerText
+				// console.log(productPrice,productImage,productName)
+				addcart(productPrice, productImage, productName)
+
+			}
+		})
+	})
+	function addcart(productPrice, productImage, productName) {
+		var addtr = document.createElement("tr")
+		var cartItem = document.querySelectorAll("tbody tr")
+		for (var i = 0; i < cartItem.length; i++) {
+			var productT = document.querySelectorAll(".title")
+			if (productT[i].innerHTML == productName) {
+				alert("san phan cua ban da co trong gio hang")
+				return
+			}
+		}
+		var trcontent = '<tr><td  style="display:flex ; align-items: center;"><img  style="width:70px;" src=' + productImage + ' alt=""><span class="title">' + productName + '</span></td><td><p><span class="price">' + productPrice + '</span><sup>đ</sup></p></td> <td><input style="width: 30px; outline: none; "    type="number" value="1" min="1"> </td><td style="cursor:pointer;"> <span class="cart-delete">xoa</span></td></tr>'
+		addtr.innerHTML = trcontent
+		var carttabe = document.querySelector("tbody")
+		carttabe.append(addtr)
+
+		carttotal()
+		deleteCart()
+	}
+	//them tien
+
+	function carttotal() {
+		var cartItem = document.querySelectorAll("tbody tr")
+		var totalC = 0
+		// console.log(cartItem.length)
+		for (var i = 0; i < cartItem.length; i++) {
+			var inputValue = cartItem[i].querySelector("input").value
+			// console.log(inputValue)
+			var productPrice = cartItem[i].querySelector(".price").innerHTML
+			// console.log(productPrice)
+			totalA = inputValue * productPrice * 1000
+			// totalB = totalA.toLocaleString('de-DE')
+			// console.log(totalC)
+			totalC = totalC + totalA
+			// totalD = totalC.toLocaleString('de-DE')  
+
+
+		}
+		var cartTotalA = document.querySelector(".price-total span")
+		var cartPrice = document.querySelector(".cart-icon span")
+		cartTotalA.innerHTML = totalC.toLocaleString('de-DE')
+		cartPrice.innerHTML = totalC.toLocaleString('de-DE')
+		inputchange()
+
+	}
+	// delete
+	function deleteCart() {
+		var cartItem = document.querySelectorAll("tbody tr")
+		for (var i = 0; i < cartItem.length; i++) {
+			var productT = document.querySelectorAll(".cart-delete")
+			productT[i].addEventListener("click", function (event) {
+				var cartdelete = event.target
+				var cartItemR = cartdelete.parentElement.parentElement
+				cartItemR.remove()
+				carttotal()
+				// console.log(cartItemR)
+			})
+
+
+		}
+	}
+	function inputchange() {
+		var cartItem = document.querySelectorAll("tbody tr")
+		for (var i = 0; i < cartItem.length; i++) {
+			var inputvalue = cartItem[i].querySelector("input")
+			inputvalue, addEventListener("change", function () {
+				carttotal()
+			})
+
+
+		}
+	}
+	const cartbtn = document.querySelector(".fa-times")
+	const cartshow = document.querySelector(".fa-shopping-cart")
+	cartshow.addEventListener("click", function () {
+		document.querySelector(".cart").style.right = "0"
+	})
+	cartbtn.addEventListener("click", function () {
+		document.querySelector(".cart").style.right = "-100%"
+	})
+</script>
+
+</html>

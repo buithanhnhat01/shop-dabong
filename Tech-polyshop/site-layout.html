@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+  <body>
+      <main class="container">
+      <header class="row text center">
+        <div class="col">
+          <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="#">Tech-Polyshop</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Manage Customer</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Manage Category</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Manage Product</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Manage Order</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Manage Profile</a>
+                </li>
+                
+              </ul>
+              
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="row">
+        <div class="col mt-4">
+          
+        </div>
+      </section>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+        *{
+            padding:0px 0px;
+            margin:0px;
+    
+        }
+        body{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            color:#111;
+            line-height: 1.15;
+        }
+       #wrapper{
+       max-width: 1170px;
+       margin: 0 auto;
+    
+            }
+            .headline{
+                text-align: center;
+                margin: 40px 410px;
+            }
+            h3{
+                font-size: 18px;
+                color: #111;
+                padding:10px 20px;
+                text-transform: uppercase;
+                border: 1px solid #bebebe;
+                display: inline-block;
+                color:#555;
+                font-weight: 600;
+            }
+            ul.products{
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+            }
+            ul.products li{
+                flex-basis: 25%;
+                padding-left: 15px;
+                padding-right: 15px;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+            }
+            ul.products li img{
+                max-width: 100%;
+                height: auto;
+            }
+            ul.products li .product-top{
+                position: relative;
+                overflow: hidden;
+            }
+
+            ul.products li  .product-top .product-thumb{
+                display: block;
+            }
+            ul.products li  .product-top .product-thumb img{
+                display: block;
+            }
+            ul.products li:hover  .product-top .product-thumb img{
+                filter: opacity(80%);
+            }
+            ul.products li  .product-top a.buy-now{
+                text-transform:  uppercase;
+                text-decoration: none;
+                text-align: center;
+                display: block;
+                background-color: #446084;
+                color: #fff;
+                padding: 10px 0px;
+                position: absolute;
+                bottom: -36px;
+                width: 100%;
+                transition: 0.35s ease-in-out;
+                opacity: 0.85;
+            }
+            ul.products li :hover a.buy-now{
+                bottom: 0px;
+
+            }
+            ul.products li  .product-info{
+                padding: 10px 0px;  
+            }
+        ul.products li  .product-info a{
+         display: block;
+         text-decoration: none; 
+            }
+            ul.products li  .product-info a.product-cat{
+                font-size: 11px;
+                text-transform: uppercase;
+                color:#9e9e9e;
+                padding: 3px 0px;
+            }
+            ul.products li  .product-info a.product-name{
+                color:#334862 ;
+                padding:3px 0px;
+
+            }
+            ul.products li  .product-info .product-price{
+                color: #111;
+                padding: 2px 0px;
+                font-weight: 600;
+            }
+
+        
+    </style>
+    <div id="wrapper">
+<div class="headline">
+    <h3>San pham ban chay</h3>
+</div>
+<ul class="products">
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+    <li>
+      <div class="product-item">
+          <div class="product-top">
+              <a href="" class="product-thumb">
+                  <img src="images/1.jpg" alt="">
+              </a>
+              <a href="" class="buy-now">Mua Ngay</a>
+          
+          </div>
+          <div class="product-info">
+              <a  href=""" class="a product-cat">BAGS</a>
+              <a href="" class="product-name">laptop111</a>
+              <div class="product-price">$4.2</div>
+          </div>
+      </div>
+  </li>
+  <li>
+    <div class="product-item">
+        <div class="product-top">
+            <a href="" class="product-thumb">
+                <img src="images/1.jpg" alt="">
+            </a>
+            <a href="" class="buy-now">Mua Ngay</a>
+        
+        </div>
+        <div class="product-info">
+            <a  href=""" class="a product-cat">BAGS</a>
+            <a href="" class="product-name">laptop111</a>
+            <div class="product-price">$4.2</div>
+        </div>
+    </div>
+</li>
+<li>
+  <div class="product-item">
+      <div class="product-top">
+          <a href="" class="product-thumb">
+              <img src="images/1.jpg" alt="">
+          </a>
+          <a href="" class="buy-now">Mua Ngay</a>
+      
+      </div>
+      <div class="product-info">
+          <a  href=""" class="a product-cat">BAGS</a>
+          <a href="" class="product-name">laptop111</a>
+          <div class="product-price">$4.2</div>
+      </div>
+  </div>
+</li>
+<li>
+  <div class="product-item">
+      <div class="product-top">
+          <a href="" class="product-thumb">
+              <img src="images/1.jpg" alt="">
+          </a>
+          <a href="" class="buy-now">Mua Ngay</a>
+      
+      </div>
+      <div class="product-info">
+          <a  href=""" class="a product-cat">BAGS</a>
+          <a href="" class="product-name">laptop111</a>
+          <div class="product-price">$4.2</div>
+      </div>
+  </div>
+</li>
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="product-item">
+            <div class="product-top">
+                <a href="" class="product-thumb">
+                    <img src="images/1.jpg" alt="">
+                </a>
+                <a href="" class="buy-now">Mua Ngay</a>
+            
+            </div>
+            <div class="product-info">
+                <a  href=""" class="a product-cat">BAGS</a>
+                <a href="" class="product-name">laptop111</a>
+                <div class="product-price">$4.2</div>
+            </div>
+        </div>
+    </li>
+     
+    
+    
+
+    
+
+   
+</ul>
+      <footer></footer>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
